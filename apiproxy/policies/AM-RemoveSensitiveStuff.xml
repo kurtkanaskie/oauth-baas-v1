@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="false" name="AM-RemoveSensitiveStuff">
+    <DisplayName>AM-RemoveSensitiveStuff</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">
+{
+    "access_token":"{oauthv2accesstoken.OA-GenerateAccessToken-Password.access_token}",
+    "expires_in":"{oauthv2accesstoken.OA-GenerateAccessToken-Password.expires_in}",
+    "refresh_token":"{oauthv2accesstoken.OA-GenerateAccessToken-Password.refresh_token}",
+    "scope":"{oauthv2accesstoken.OA-GenerateAccessToken-Password.scope}",
+    "externalAccessToken":"{oauthv2accesstoken.OA-GenerateAccessToken-Password.accesstoken.externalUsername}"
+}
+</Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

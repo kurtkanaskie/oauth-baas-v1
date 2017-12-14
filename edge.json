@@ -1,0 +1,189 @@
+{
+    "version": "1.0",
+    "apiConfig": {
+    },
+    "envConfig": {
+        "test": {
+            "targetServers": [
+                {
+                    "name": "oauth-baas-v1",
+                    "host": "apibaas-trial.apigee.net",
+                    "isEnabled": true,
+                    "port": 443,
+                    "sSLInfo": {
+                        "ciphers": [],
+                        "clientAuthEnabled": "false",
+                        "enabled": "true",
+                        "ignoreValidationErrors": false,
+                        "protocols": []
+                    }
+                }
+            ],
+            "caches": [],
+            "kvms": [
+                {
+                    "name": "oauth-baas-v1",
+                    "encrypted": false,
+                    "entry": [
+                        {
+                            "name": "target.basepath",
+                            "value": "kurtkanaskietraining/crm"
+                        },
+                        {
+                            "name": "target.tokenPathsuffix",
+                            "value": "token"
+                        },
+                        {
+                            "name": "target.clientId",
+                            "value": "YXA6RnuI_YBmEeehiAq4dBoSnA"
+                        },
+                        {
+                            "name": "target.clientSecret",
+                            "value": "YXA6Z8gq-L3vy379WycxIa8sSkzceww"
+                        }
+                    ]
+                }
+            ]
+        },
+        "prod": {
+            "targetServers": [
+                {
+                    "name": "oauth-baas-v1",
+                    "host": "apibaas-trial.apigee.net",
+                    "isEnabled": true,
+                    "port": 443,
+                    "sSLInfo": {
+                        "ciphers": [],
+                        "clientAuthEnabled": "false",
+                        "enabled": "true",
+                        "ignoreValidationErrors": false,
+                        "protocols": []
+                    }
+                }
+            ],
+            "caches": [],
+            "kvms": [
+                {
+                    "name": "oauth-baas-v1",
+                    "encrypted": false,
+                    "entry": [
+                        {
+                            "name": "target.basepath",
+                            "value": "kurtkanaskietraining/crm"
+                        },
+                        {
+                            "name": "target.tokenPathsuffix",
+                            "value": "token"
+                        },
+                        {
+                            "name": "target.clientId",
+                            "value": "YXA6WRIk-ttPEee48g7sJBXz3w"
+                        },
+                        {
+                            "name": "target.clientSecret",
+                            "value": "YXA6305aDa2_2PwAmrwFRP3R6-DaBbA"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "orgConfig": {
+        "apiProducts": [
+            {
+                "name": "oauth-baas-v1-product-test",
+                "apiResources": [
+                    "/",
+                    "/**"
+                ],
+                "approvalType": "auto",
+                "attributes": [
+                    {
+                        "name": "custom.description",
+                        "value": "Product to test oauth-baas-v1 API for test env with attributes"
+                    }
+                ],
+                "description": "Product to test oauth-baas-v1 API in test env",
+                "displayName": "oauth-baas-v1-product-test",
+                "environments": [
+                    "test"
+                ],
+                "proxies": [
+                    "oauth-baas-v1"
+                ],
+                "quota": "10000",
+                "quotaInterval": "1",
+                "quotaTimeUnit": "month",
+                "scopes": []
+            },
+            {
+                "name": "oauth-baas-v1-product-prod",
+                "apiResources": [
+                    "/",
+                    "/**"
+                ],
+                "approvalType": "auto",
+                "attributes": [
+                    {
+                        "name": "custom.description",
+                        "value": "Product to test oauth-baas-v1 API for prod env with attributes"
+                    }
+                ],
+                "description": "Product to test oauth-baas-v1 API in prod env",
+                "displayName": "oauth-baas-v1-product-prod",
+                "environments": [
+                    "prod"
+                ],
+                "proxies": [
+                    "oauth-baas-v1"
+                ],
+                "quota": "10000",
+                "quotaInterval": "1",
+                "quotaTimeUnit": "month",
+                "scopes": []
+            }        
+        ],
+        "developers": [
+            {
+                "email": "kurtkanaskie+app@google.com",
+                "firstName": "Kurt App",
+                "lastName": "Kanaskie",
+                "userName": "kurtappkanaskie",
+                "attributes": [
+                    {
+                        "name": "note",
+                        "value": "developer+suffix@google.com is fixed"
+                    }
+                ]
+            }
+        ],
+        "developerApps": {
+            "kurtkanaskie@google.com": [
+                {
+                    "name": "oauth-baas-v1-app-test",
+                    "apiProducts": [ "oauth-baas-v1-product-test" ],
+                    "callbackUrl": "NA",
+                    "scopes": [],
+                    "attributes": [
+                        {
+                            "name": "custom.privacy",
+                            "value": "confidential"
+                        }
+                    ]
+                },
+                {
+                    "name": "oauth-baas-v1-app-prod",
+                    "apiProducts": [ "oauth-baas-v1-product-prod" ],
+                    "callbackUrl": "NA",
+                    "scopes": [],
+                    "attributes": [
+                        {
+                            "name": "custom.privacy",
+                            "value": "confidential"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

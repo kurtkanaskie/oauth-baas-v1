@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="user-authentication-failed">
+            <!-- <Condition>authenticate.response.status.code != 200</Condition> -->
+            <Condition>servicecallout.SC-AuthenticateUser.failed = true</Condition>
+            <Step>
+                <Name>RF-AutenticateFailed</Name>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="Token - Client Credentials">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>KV-config-values</Name>
+                </Step>
+                <Step>
+                    <Name>SC-AuthenticateClient</Name>
+                </Step>
+                <Step>
+                    <Name>EV-TokenParams</Name>
+                </Step>
+                <Step>
+                    <Name>OA-GenerateAccessToken-ClientCredentials</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "client_credentials")</Condition>
+        </Flow>
+        <Flow name="Token - Password">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>OA-VerifyAPIKey-and-Secret</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SetUsernamePasswordFromRequest</Name>
+                </Step>
+                <Step>
+                    <Name>KV-config-values</Name>
+                </Step>
+                <Step>
+                    <Name>SC-AuthenticateUser</Name>
+                </Step>
+                <!--
+                    <Condition>servicecallout.SC-AuthenticateUser.failed = true</Condition>
+                -->
+                <!-- 
+                <Step>
+                    <Condition>authenticate.response.status.code != 200</Condition>
+                    <Name>RF-AutenticateFailed</Name>
+                </Step>
+                -->
+                <Step>
+                    <!-- PO003 issue -->
+                    <Name>EV-TokenParams</Name>
+                </Step>
+                <Step>
+                    <Name>JS-AdjustExpiryValues</Name>
+                </Step>
+                <Step>
+                    <Name>OA-GenerateAccessToken-Password</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
+        </Flow>
+        <Flow name="Token - Implicit">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>OA-GenerateAccessToken-Implicit</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "POST") and (request.formparam.grant_type = "implicit"</Condition>
+        </Flow>
+        <Flow name="Token - Refresh">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>OA-GetRefreshTokenInfo</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SetUsernamePasswordFromToken</Name>
+                </Step>
+                <Step>
+                    <Name>KV-config-values</Name>
+                </Step>
+                <Step>
+                    <Name>SC-AuthenticateUser</Name>
+                </Step>
+                <Step>
+                    <Name>EV-TokenParams</Name>
+                </Step>
+                <Step>
+                    <Name>JS-AdjustExpiryValues</Name>
+                </Step>
+                <Step>
+                    <Name>OA-RefreshAccessToken</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "refresh_token")</Condition>
+        </Flow>
+        <Flow name="catch all">
+            <Description>Catch any unmatched calls and raise fault</Description>
+            <Request>
+                <Step>
+                    <Name>RF-path-suffix-not-found</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/**")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
+                <Name>AM-RemoveSensitiveStuff</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/oauth-baas/v1</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="NoRoute"/>
+</ProxyEndpoint>

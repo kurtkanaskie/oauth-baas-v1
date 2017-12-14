@@ -1,0 +1,177 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "OAuth BaaS",
+        "version": "1.0.0",
+        "title": "oauth-baas-v1",
+        "contact": {
+            "email": "kurtkanaskie@google.com"
+        }
+    },
+    "host": "kurtkanaskietrainer-trial-test.apigee.net",
+    "basePath": "/oauth-baas/v1",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/x-www-form-urlencoded"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/token": {
+            "post": {
+                "tags": [
+                    "OAuth"
+                ],
+                "summary": "Create token using password grant",
+                "operationId": "createTokenPasswordGrant",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "formData",
+                        "required": true,
+                        "description": "The Consumer Key, a.k.a. APIKey",
+                        "type": "string",
+                        "default": "34fJfKIUsB7UgFA2EGQ5EyI9eWYycAur"
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "formData",
+                        "required": true,
+                        "description": "The Consumer Secret",
+                        "type": "string",
+                        "default": "NYUIZBWKmL6D134T"
+                    },
+                    {
+                        "name": "grant_type",
+                        "in": "formData",
+                        "required": true,
+                        "description": "Grant type",
+                        "type": "string",
+                        "enum": [
+                            "client_credentials",
+                            "password",
+                            "implicit",
+                            "authorization_code"
+                        ],
+                        "default": "password"
+                    },
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "required": true,
+                        "description": "The user name to authenticate",
+                        "type": "string",
+                        "default": "boeingbilluser"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "description": "The user password to authenticate",
+                        "type": "string",
+                        "default": "boeingbilluser"
+                    },
+                    ,
+                    {
+                        "name": "organization",
+                        "in": "formData",
+                        "required": true,
+                        "description": "The user organization to be used with authenticcation",
+                        "type": "string",
+                        "default": "boeingbilluser"
+                    },
+                    {
+                        "name": "state",
+                        "in": "formData",
+                        "required": false,
+                        "description": "A value to be sent back with the response.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "scope",
+                        "in": "formData",
+                        "required": false,
+                        "description": "Scopes associated with returned access token",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Token"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Token": {
+            "type": "object",
+            "properties": {
+                "issued_at": {
+                    "type": "string"
+                },
+                "application_name": {
+                    "type": "string"
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "api_product_list": {
+                    "type": "string"
+                },
+                "expires_in": {
+                    "type": "string"
+                },
+                "developer.email": {
+                    "type": "string"
+                },
+                "token_type": {
+                    "type": "string"
+                },
+                "client_id": {
+                    "type": "string"
+                },
+                "access_token": {
+                    "type": "string"
+                },
+                "organization_name": {
+                    "type": "string"
+                },
+                "refresh_token_expires_in": {
+                    "type": "string"
+                },
+                "refresh_count": {
+                    "type": "string"
+                }
+            }
+        },
+        "ErrorResponse": {
+            "properties": {
+                "errorCode": {
+                    "type": "string"
+                },
+                "userMessage": {
+                    "type": "string"
+                },
+                "systemMessage": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

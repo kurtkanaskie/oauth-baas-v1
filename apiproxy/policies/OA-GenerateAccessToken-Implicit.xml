@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OA-GenerateAccessToken-Implicit">
+    <DisplayName>OA-GenerateAccessToken-Implicit</DisplayName>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessTokenImplicitGrant</Operation>
+    <!-- This is in millseconds, so expire in an hour -->
+    <ExpiresIn>3600000</ExpiresIn>
+    <ClientId>request.formparam.client_id</ClientId>
+    <ResponseType>request.formparam.response_type</ResponseType>
+    <RedirectUri>request.formparam.redirect_url</RedirectUri>
+    <GenerateResponse enabled="true"/>
+    <GenerateErrorResponse enabled="true"/>
+</OAuthV2>
