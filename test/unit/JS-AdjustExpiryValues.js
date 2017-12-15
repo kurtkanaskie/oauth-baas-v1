@@ -9,7 +9,7 @@ var js = '../../../apiproxy/resources/jsc/JS-AdjustExpiryValues.js';
 
 describe('feature: Expiry and refresh expiry time adjustment', function() {
 
-	it('externalExpiresIn should be multiplied by 4200 and refreshExpiresIn should be externalExpiresIn times 4200000', function(done) {
+	it('externalExpiresIn should be multiplied by 1000 (42000) and refreshExpiresIn should be externalExpiresIn times 100 (4200000)', function(done) {
 		var mock = mockFactory.getMock();
 		
 		mock.contextGetVariableMethod.withArgs('externalExpiresIn').returns(42);
