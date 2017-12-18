@@ -13,6 +13,7 @@
             <Parameter>target.tokenPathsuffix</Parameter>
         </Key>
     </Get>
+    <!--
     <Get assignTo="flow.target.clientId" index="1">
         <Key>
             <Parameter>target.clientId</Parameter>
@@ -23,6 +24,24 @@
             <Parameter>target.clientSecret</Parameter>
         </Key>
     </Get>
+    -->
+    <Get assignTo="flow.target.clientId" index="1">
+        <Key>
+            <Parameter>target.credentials</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="flow.target.clientSecret" index="2">
+        <Key>
+            <Parameter>target.credentials</Parameter>
+        </Key>
+    </Get>
+    <!-- BUG: Can't mix no index with an index
+    <Get assignTo="flow.target.credentials">
+        <Key>
+            <Parameter>target.credentials</Parameter>
+        </Key>
+    </Get>
+    -->
     <Get assignTo="logging.log" index="1">
         <Key>
             <Parameter>logging.log</Parameter>
@@ -32,6 +51,6 @@
         <Key>
             <Parameter>logging.level</Parameter>
         </Key>
-    </Get>
+    </Get>    
     <Scope>environment</Scope>
 </KeyValueMapOperations>

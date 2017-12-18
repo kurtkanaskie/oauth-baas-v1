@@ -40,6 +40,10 @@
                         {
                             "name": "target.clientSecret",
                             "value": "YXA6Z8gq-L3vy379WycxIa8sSkzceww"
+                        },
+                        {
+                            "name": "target.credentials",
+                            "value": "YXA6RnuI_YBmEeehiAq4dBoSnA,YXA6Z8gq-L3vy379WycxIa8sSkzceww"
                         }
                     ]
                 }
