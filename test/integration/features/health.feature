@@ -23,7 +23,7 @@ Feature: API proxy health
         And response body should contain access_token
 
     @refresh_token
-    Scenario: Create password grant token
+    Scenario: Create refresh token
         Given I set Content-Type header to application/x-www-form-urlencoded
         And I set body to grant_type=password&client_id=`clientId`&client_secret=`clientSecret`&username=`userUsername`&password=`userPassword`
         When I POST to /token

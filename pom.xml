@@ -74,24 +74,6 @@
 				<userPassword>demouser1</userPassword>
 			</properties>
 		</profile>
-		<profile>
-			<id>hughes-dev-test-dev</id>
-			<properties>
-				<apigee.profile>hughes-dev-test-dev</apigee.profile>
-				<apigee.env>test-dev</apigee.env>
-				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
-				<apigee.apiversion>v1</apigee.apiversion>
-				<apigee.org>hughes-dev</apigee.org>
-				<apigee.username>${env.APIGEE_USERNAME}</apigee.username>
-				<apigee.password>${env.APIGEE_PASSWORD}</apigee.password>
-				<api.northbound.domain>hughes-dev-test-dev.apigee.net</api.northbound.domain>
-				<api.testtag>~@intg,~@health,~@wip,~@mock</api.testtag>
-				<clientId>TBD</clientId>
-				<clientSecret>TBD</clientSecret>
-				<userUsername>demouser</userUsername>
-				<userPassword>demouser1</userPassword>
-			</properties>
-		</profile>
 	</profiles>
 
 	<build>
@@ -149,6 +131,7 @@
 									<directory>${project.root.dir}</directory>
 									<filtering>true</filtering>
 									<includes>
+										<include>resources/**</include>
 										<include>apiproxy/**</include>
 										<include>test/integration/**</include>
 										<include>test/performance/**</include>
@@ -178,10 +161,12 @@
 				<configuration>
 					<basedir>${target.root.dir}</basedir>
 					<includes>
+						<include>apiproxy/oauth-baas-v1.xml</include>
 						<include>apiproxy/proxies/default.xml</include>
 						<include>test/integration/test-config.json</include>
-						<include>apiproxy/oauth-baas-v1.xml</include>
-						<include>test/performance/testdata.csv</include>
+						<include>resources/edge/org/apiProducts.json</include>
+						<include>resources/edge/org/developerApps.json</include>
+						<!--<include>test/performance/testdata.csv</include>-->
 					</includes>
 					<replacements>
 						<replacement>
@@ -193,7 +178,7 @@
 							<value>oauth-baas-${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
-							<token>kurtkanaskietrainer-trial-test.apigee.net</token>
+							<token>API_NORTHBOUND_DOMAIN</token>
 							<value>${api.northbound.domain}</value>
 						</replacement>
 						<replacement>
@@ -209,12 +194,8 @@
 							<value>${userPassword}</value>
 						</replacement>
 						<replacement>
-							<token>oauth-baas-v1-product-test</token>
-							<value>oauth-baas-v1-product-${apigee.env}</value>
-						</replacement>
-						<replacement>
-							<token>oauth-baas-v1-app-test</token>
-							<value>oauth-baas-v1-app-${apigee.env}</value>
+							<token>APIGEE_ENVIRONMENT</token>
+							<value>${apigee.env}</value>
 						</replacement>
 					</replacements>
 				</configuration>

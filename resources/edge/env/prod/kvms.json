@@ -1,0 +1,28 @@
+[
+    {
+        "name": "oauth-baas-v1",
+        "encrypted": false,
+        "entry": [
+            {
+                "name": "target.basepath",
+                "value": "kurtkanaskietraining/crm"
+            },
+            {
+                "name": "target.tokenPathsuffix",
+                "value": "token"
+            },
+            {
+                "name": "target.clientId",
+                "value": "YXA6WRIk-ttPEee48g7sJBXz3w"
+            },
+            {
+                "name": "target.clientSecret",
+                "value": "YXA6305aDa2_2PwAmrwFRP3R6-DaBbA"
+            },
+            {
+                "name": "target.credentials",
+                "value": "YYXA6WRIk-ttPEee48g7sJBXz3w,YXA6305aDa2_2PwAmrwFRP3R6-DaBbA"
+            }
+        ]
+    }
+]

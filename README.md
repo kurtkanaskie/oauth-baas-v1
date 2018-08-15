@@ -230,5 +230,9 @@ mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapi.tes
 Export App keys
 mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
 
-Install proxy and update all configs, run health tests
-mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health 
+## Bottom line
+
+### All at once using resources dir, run health tests
+Replacer copies and replaces the resources dir into the target. Note use of -Dapigee.config.dir and -Dapigee.config.exportDir options.
+
+* mvn -X -Ptraining-test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
