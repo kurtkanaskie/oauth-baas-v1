@@ -66,6 +66,10 @@
                     <Name>JS-AdjustExpiryValues</Name>
                 </Step>
                 <Step>
+                    <Condition>(request.formparam.username != "demouser") OR (request.formparam.password != "demouser1")</Condition>
+                    <Name>RF-AutenticateFailed</Name>
+                </Step>
+                <Step>
                     <Name>OA-GenerateAccessToken-Password</Name>
                 </Step>
             </Request>

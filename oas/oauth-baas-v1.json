@@ -34,7 +34,7 @@
                         "required": true,
                         "description": "The Consumer Key, a.k.a. APIKey",
                         "type": "string",
-                        "default": "34fJfKIUsB7UgFA2EGQ5EyI9eWYycAur"
+                        "default": "586ByccjanFsEdDefEB1pOQBQw57B4tA"
                     },
                     {
                         "name": "client_secret",
@@ -42,7 +42,7 @@
                         "required": true,
                         "description": "The Consumer Secret",
                         "type": "string",
-                        "default": "NYUIZBWKmL6D134T"
+                        "default": "597D9SNQQkONJz5d"
                     },
                     {
                         "name": "grant_type",
@@ -64,7 +64,7 @@
                         "required": true,
                         "description": "The user name to authenticate",
                         "type": "string",
-                        "default": "boeingbilluser"
+                        "default": "demouser"
                     },
                     {
                         "name": "password",
@@ -72,16 +72,7 @@
                         "required": true,
                         "description": "The user password to authenticate",
                         "type": "string",
-                        "default": "boeingbilluser"
-                    },
-                    ,
-                    {
-                        "name": "organization",
-                        "in": "formData",
-                        "required": true,
-                        "description": "The user organization to be used with authenticcation",
-                        "type": "string",
-                        "default": "boeingbilluser"
+                        "default": "demouser1"
                     },
                     {
                         "name": "state",

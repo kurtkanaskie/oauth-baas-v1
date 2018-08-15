@@ -229,3 +229,6 @@ mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapi.tes
 
 Export App keys
 mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
+
+Install proxy and update all configs, run health tests
+mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health 
