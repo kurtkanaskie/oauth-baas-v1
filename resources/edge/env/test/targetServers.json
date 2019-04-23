@@ -1,7 +1,7 @@
 [
     {
-        "name": "oauth-baas-v1",
-        "host": "apibaas-trial.apigee.net",
+        "name": "oauth-mock-idp-v1",
+        "host": "amer-demo13-test.apigee.net",
         "isEnabled": true,
         "port": 443,
         "sSLInfo": {

@@ -1,11 +1,11 @@
 [
     {
-        "name": "oauth-baas-v1",
+        "name": "oauth-mock-v1",
         "encrypted": false,
         "entry": [
             {
                 "name": "target.basepath",
-                "value": "kurtkanaskietraining/crm"
+                "value": "oauth-mock-idp/v1"
             },
             {
                 "name": "target.tokenPathsuffix",

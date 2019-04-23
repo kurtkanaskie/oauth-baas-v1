@@ -135,7 +135,7 @@
         </Response>
     </PostFlow>
     <HTTPProxyConnection>
-        <BasePath>/oauth-baas/v1</BasePath>
+        <BasePath>/oauth-mock/v1</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>

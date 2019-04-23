@@ -27,7 +27,7 @@
     -->
     <HTTPTargetConnection>
         <LoadBalancer>
-            <Server name="oauth-baas-v1"/>
+            <Server name="oauth-mock-idp-v1"/>
         </LoadBalancer>
         <Path>{flow.target.basepath}/{flow.target.tokenPathsuffix}</Path>
     </HTTPTargetConnection>

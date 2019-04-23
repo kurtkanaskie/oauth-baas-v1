@@ -1,6 +1,6 @@
 [
     {
-        "name": "oauth-baas-v1-product-APIGEE_ENVIRONMENT",
+        "name": "oauth-mock-v1-product-APIGEE_ENVIRONMENT",
         "apiResources": [
             "/",
             "/**"
@@ -9,16 +9,16 @@
         "attributes": [
             {
                 "name": "custom.description",
-                "value": "Product to test oauth-baas-v1 API for APIGEE_ENVIRONMENT env with attributes"
+                "value": "Product to test oauth-mock-v1 API for APIGEE_ENVIRONMENT env with attributes"
             }
         ],
-        "description": "Product to test oauth-baas-v1 API in APIGEE_ENVIRONMENT env",
-        "displayName": "oauth-baas-v1-product-APIGEE_ENVIRONMENT",
+        "description": "Product to test oauth-mock-v1 API in APIGEE_ENVIRONMENT env",
+        "displayName": "oauth-mock-v1-product-APIGEE_ENVIRONMENT",
         "environments": [
             "APIGEE_ENVIRONMENT"
         ],
         "proxies": [
-            "oauth-baas-v1"
+            "oauth-mock-v1"
         ],
         "quota": "10000",
         "quotaInterval": "1",

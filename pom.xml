@@ -3,9 +3,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>apigee</groupId>
-	<artifactId>oauth-baas-v1</artifactId>
+	<artifactId>oauth-mock-v1</artifactId>
 	<version>-</version>
-	<name>oauth-baas-${deployment.suffix}v1</name>
+	<name>oauth-mock-${deployment.suffix}v1</name>
 	<packaging>pom</packaging>
 
 	<pluginRepositories>
@@ -38,6 +38,80 @@
 		 For apigee.options, refer to "Advanced Configuration Options" under https://github.com/apigee/apigee-deploy-maven-plugin#pom-xml-sample 
 	-->
 	<profiles>
+		<profile>
+			<id>test</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<!-- Jenkins command:
+				install -P${EdgeProfile} -Ddeployment.suffix=${EdgeDeploySuffix} -Dapigee.org=${EdgeOrg} -Dapigee.env=${EdgeEnv} -Dapi.northbound.domain=${EdgeNorthboundDomain} -Dapigee.username=${EdgeInstallUsername} -Dapigee.password=${EdgeInstallPassword} -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}
+			-->
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+				<userUsername>demouser</userUsername>
+				<userPassword>demouser1</userPassword>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<!-- Jenkins command:
+				install -P${EdgeProfile} -Ddeployment.suffix=${EdgeDeploySuffix} -Dapigee.org=${EdgeOrg} -Dapigee.env=${EdgeEnv} -Dapi.northbound.domain=${EdgeNorthboundDomain} -Dapigee.username=${EdgeInstallUsername} -Dapigee.password=${EdgeInstallPassword} -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}
+			-->
+			<properties>
+				<apigee.profile>prod</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<api.testtag>@health</api.testtag>
+				<userUsername>demouser</userUsername>
+				<userPassword>demouser1</userPassword>
+			</properties>
+		</profile>
+		<profile>
+			<id>amer-demo13-test</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+				<userUsername>demouser</userUsername>
+				<userPassword>demouser1</userPassword>
+			</properties>
+		</profile>
+		<profile>
+			<id>amer-demo13-prod</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+				<userUsername>demouser</userUsername>
+				<userPassword>demouser1</userPassword>
+			</properties>
+		</profile>
 		<profile>
 			<id>training-test</id>
 			<properties>
@@ -161,7 +235,7 @@
 				<configuration>
 					<basedir>${target.root.dir}</basedir>
 					<includes>
-						<include>apiproxy/oauth-baas-v1.xml</include>
+						<include>apiproxy/oauth-mock-v1.xml</include>
 						<include>apiproxy/proxies/default.xml</include>
 						<include>test/integration/test-config.json</include>
 						<include>resources/edge/org/apiProducts.json</include>
@@ -170,12 +244,12 @@
 					</includes>
 					<replacements>
 						<replacement>
-							<token>/oauth-baas/v1</token>
-							<value>/oauth-baas/${deployment.suffix}v1</value>
+							<token>/oauth-mock/v1</token>
+							<value>/oauth-mock/${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
-							<token>oauth-baas-v1</token>
-							<value>oauth-baas-${deployment.suffix}v1</value>
+							<token>oauth-mock-v1</token>
+							<value>oauth-mock-${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
 							<token>API_NORTHBOUND_DOMAIN</token>

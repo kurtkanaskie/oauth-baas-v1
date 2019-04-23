@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="14" name="oauth-baas-v1">
+<APIProxy revision="14" name="oauth-mock-v1">
     <Basepaths>/oauth</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1513019477532</CreatedAt>
     <CreatedBy>kurtkanaskie@google.com</CreatedBy>
     <!-- @description gets replaced with SCM details, see pom.xml -->
-    <Description>OAuth proxy to generate access token for client_credentials and password grant_types using BaaS to authenticate a demo user. Uses BaaS tokens as attribute on Edge token.</Description>
-    <DisplayName>oauth-baas-v1</DisplayName>
+    <Description>OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
+    <DisplayName>oauth-mock-v1</DisplayName>
     <LastModifiedAt>1513020148764</LastModifiedAt>
     <LastModifiedBy>kurtkanaskie@google.com</LastModifiedBy>
     <Policies>

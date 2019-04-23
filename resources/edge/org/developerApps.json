@@ -1,8 +1,8 @@
 {
-    "kurtkanaskie+app@google.com": [
+    "cicd-developer-APIGEE_ENVIRONMENT@google.com": [
         {
-            "name": "oauth-baas-v1-app-APIGEE_ENVIRONMENT",
-            "apiProducts": [ "oauth-baas-v1-product-APIGEE_ENVIRONMENT" ],
+            "name": "oauth-mock-v1-app-APIGEE_ENVIRONMENT",
+            "apiProducts": [ "oauth-mock-v1-product-APIGEE_ENVIRONMENT" ],
             "callbackUrl": "NA",
             "scopes": [],
             "attributes": [
