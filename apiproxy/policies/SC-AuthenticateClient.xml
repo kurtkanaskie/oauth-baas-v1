@@ -19,15 +19,9 @@
         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
     </Request>
     <Response>authenticate.response</Response>
-    <!--
-    <HTTPTargetConnection>
-        <Properties/>
-        <URL>https://apibaas-trial.apigee.net/kurtkanaskietraining/crm/token</URL>
-    </HTTPTargetConnection>
-    -->
     <HTTPTargetConnection>
         <LoadBalancer>
-            <Server name="oauth-mock-idp-v1"/>
+            <Server name="oauth-mock-v1"/>
         </LoadBalancer>
         <Path>{flow.target.basepath}/{flow.target.tokenPathsuffix}</Path>
     </HTTPTargetConnection>

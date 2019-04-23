@@ -1,6 +1,6 @@
 [
     {
-        "name": "oauth-mock-idp-v1",
+        "name": "oauth-mock-v1",
         "host": "amer-demo13-test.apigee.net",
         "isEnabled": true,
         "port": 443,
