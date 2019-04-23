@@ -232,6 +232,9 @@ mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
 
 ## Bottom line
 
+### Run tests once the target was built
+* node ./node_modules/cucumber/bin/cucumber.js target/test/integration/features --tags @health
+
 ### All at once using resources dir, run health tests
 Replacer copies and replaces the resources dir into the target. Note use of -Dapigee.config.dir and -Dapigee.config.exportDir options.
 
