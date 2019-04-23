@@ -1,7 +1,7 @@
 [
     {
-        "name": "oauth-mock-v1",
-        "host": "amer-demo13-test.apigee.net",
+        "name": "oauth-v1",
+        "host": "API_NORTHBOUND_DOMAIN",
         "isEnabled": true,
         "port": 443,
         "sSLInfo": {

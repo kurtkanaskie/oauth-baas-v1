@@ -3,9 +3,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>apigee</groupId>
-	<artifactId>oauth-mock-v1</artifactId>
+	<artifactId>oauth-v1</artifactId>
 	<version>-</version>
-	<name>oauth-mock-${deployment.suffix}v1</name>
+	<name>oauth-${deployment.suffix}v1</name>
 	<packaging>pom</packaging>
 
 	<pluginRepositories>
@@ -235,21 +235,22 @@
 				<configuration>
 					<basedir>${target.root.dir}</basedir>
 					<includes>
-						<include>apiproxy/oauth-mock-v1.xml</include>
+						<include>apiproxy/oauth-v1.xml</include>
 						<include>apiproxy/proxies/default.xml</include>
 						<include>test/integration/test-config.json</include>
+						<include>resources/edge/env/*/targetServers.json</include>
 						<include>resources/edge/org/apiProducts.json</include>
 						<include>resources/edge/org/developerApps.json</include>
 						<!--<include>test/performance/testdata.csv</include>-->
 					</includes>
 					<replacements>
 						<replacement>
-							<token>/oauth-mock/v1</token>
-							<value>/oauth-mock/${deployment.suffix}v1</value>
+							<token>/oauth-/v1</token>
+							<value>/oauth-/${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
-							<token>oauth-mock-v1</token>
-							<value>oauth-mock-${deployment.suffix}v1</value>
+							<token>oauth-v1</token>
+							<value>oauth-${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
 							<token>API_NORTHBOUND_DOMAIN</token>

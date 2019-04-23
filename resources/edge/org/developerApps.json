@@ -1,8 +1,8 @@
 {
     "cicd-developer-APIGEE_ENVIRONMENT@google.com": [
         {
-            "name": "oauth-mock-v1-app-APIGEE_ENVIRONMENT",
-            "apiProducts": [ "oauth-mock-v1-product-APIGEE_ENVIRONMENT" ],
+            "name": "oauth-v1-app-APIGEE_ENVIRONMENT",
+            "apiProducts": [ "oauth-v1-product-APIGEE_ENVIRONMENT" ],
             "callbackUrl": "NA",
             "scopes": [],
             "attributes": [
