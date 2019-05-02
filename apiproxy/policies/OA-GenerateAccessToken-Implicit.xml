@@ -8,6 +8,5 @@
     <ClientId>request.formparam.client_id</ClientId>
     <ResponseType>request.formparam.response_type</ResponseType>
     <RedirectUri>request.formparam.redirect_url</RedirectUri>
-    <GenerateResponse enabled="true"/>
-    <GenerateErrorResponse enabled="true"/>
+    <GenerateResponse enabled="false"/>
 </OAuthV2>

@@ -31,7 +31,11 @@
                     <Name>OA-GenerateAccessToken-ClientCredentials</Name>
                 </Step>
             </Request>
-            <Response/>
+            <Response>
+                <Step>
+                    <Name>AM-GenerateAccessToken-ClientCredentials</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "client_credentials")</Condition>
         </Flow>
         <Flow name="Token - Password">
@@ -73,7 +77,11 @@
                     <Name>OA-GenerateAccessToken-Password</Name>
                 </Step>
             </Request>
-            <Response/>
+            <Response>
+                <Step>
+                    <Name>AM-GenerateAccessToken-Password</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
         </Flow>
         <Flow name="Token - Implicit">
@@ -111,7 +119,11 @@
                     <Name>OA-RefreshAccessToken</Name>
                 </Step>
             </Request>
-            <Response/>
+            <Response>
+                <Step>
+                    <Name>AM-RefreshAccessToken</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "refresh_token")</Condition>
         </Flow>
         <Flow name="catch all">
@@ -127,12 +139,7 @@
     </Flows>
     <PostFlow name="PostFlow">
         <Request/>
-        <Response>
-            <Step>
-                <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
-                <Name>AM-RemoveSensitiveStuff</Name>
-            </Step>
-        </Response>
+        <Response/>
     </PostFlow>
     <HTTPProxyConnection>
         <BasePath>/oauth/v1</BasePath>

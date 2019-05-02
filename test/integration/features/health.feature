@@ -1,8 +1,8 @@
 @health
-Feature: API proxy health
+Feature: API proxy core
 	As API administrator
-	I want to monitor Apigee proxy and backend service health
-	So I can alert when it is down
+	I want to verify all happy paths work
+	So I can be sure proxy is correct
     
 	@client_credentials
     Scenario: Create client_credentials token

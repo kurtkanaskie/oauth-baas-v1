@@ -21,7 +21,7 @@
     <Response>authenticate.response</Response>
     <HTTPTargetConnection>
         <LoadBalancer>
-            <Server name="oauth-mock-v1"/>
+            <Server name="oauth-v1"/>
         </LoadBalancer>
         <Path>{flow.target.basepath}/{flow.target.tokenPathsuffix}</Path>
     </HTTPTargetConnection>

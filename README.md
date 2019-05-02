@@ -239,3 +239,4 @@ mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
 Replacer copies and replaces the resources dir into the target. Note use of -Dapigee.config.dir and -Dapigee.config.exportDir options.
 
 * mvn -X -Ptraining-test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
+node ./node_modules/cucumber/bin/cucumber.js target/test/integration/features --tags @health
