@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-AutenticateFailed">
-    <DisplayName>RF-AutenticateFailed</DisplayName>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-AppAuthenticateFailed">
+    <DisplayName>RF-AppAuthenticateFailed</DisplayName>
     <Properties/>
     <FaultResponse>
         <Set>
@@ -12,9 +12,9 @@
             <Payload contentType="application/json">
 {
     "fault": {
-        "faultstring": "Invalid user credentials",
+        "faultstring": "Invalid App credentials",
         "detail": {
-            "errorcode": "invalid_user_credentials"
+            "errorcode": "invalid_app_credentials"
         }
     }
 }

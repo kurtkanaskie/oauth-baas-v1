@@ -13,15 +13,15 @@
             },
             {
                 "name": "target.clientId",
-                "value": "YXA6RnuI_YBmEeehiAq4dBoSnA"
+                "value": "NBvDbJyrFikSGXE0prDyky8Kokq0ovSz"
             },
             {
                 "name": "target.clientSecret",
-                "value": "YXA6Z8gq-L3vy379WycxIa8sSkzceww"
+                "value": "B3fy6FrCHO4fbgRo"
             },
             {
                 "name": "target.credentials",
-                "value": "YXA6RnuI_YBmEeehiAq4dBoSnA,YXA6Z8gq-L3vy379WycxIa8sSkzceww"
+                "value": "NBvDbJyrFikSGXE0prDyky8Kokq0ovSz,B3fy6FrCHO4fbgRo"
             }
         ]
     }

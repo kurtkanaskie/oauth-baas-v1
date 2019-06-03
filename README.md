@@ -219,7 +219,6 @@ mvn -Ptest clean process-resources -Ddeployment.suffix= exec:exec@integration -D
 mvn -Ptest apigee-config:targetservers -Dapigee.config.options=update
 mvn -Ptest apigee-config:developerapps -Dapigee.config.options=update
 mvn -Ptest apigee-config:apiproducts -Dapigee.config.options=update
-mvn -Ptest apigee-config:kvms -Dapigee.config.options=update
 
 Install proxy no integration or jmeter tests
 mvn -Ptest install -Ddeployment.suffix= -Dapi.testtag=@NONE -DskipTests=true
@@ -230,6 +229,11 @@ mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapi.tes
 Export App keys
 mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
 
+## Updated individual pieces
+
+### KVM
+mvn -P test process-resources apigee-config:kvms -Dapigee.config.options=update -Ddeployment.suffix= -Dskip.clean=true -Dapigee.config.dir=target/resources/edge
+
 ## Bottom line
 
 ### Run tests once the target was built
@@ -239,4 +243,3 @@ mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
 Replacer copies and replaces the resources dir into the target. Note use of -Dapigee.config.dir and -Dapigee.config.exportDir options.
 
 * mvn -X -Ptraining-test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
-node ./node_modules/cucumber/bin/cucumber.js target/test/integration/features --tags @health

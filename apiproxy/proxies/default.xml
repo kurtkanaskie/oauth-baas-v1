@@ -6,7 +6,14 @@
             <!-- <Condition>authenticate.response.status.code != 200</Condition> -->
             <Condition>servicecallout.SC-AuthenticateUser.failed = true</Condition>
             <Step>
-                <Name>RF-AutenticateFailed</Name>
+                <Name>RF-AppAuthenticateFailed</Name>
+            </Step>
+        </FaultRule>
+        <FaultRule name="client-authentication-failed">
+            <!-- <Condition>authenticate.response.status.code != 200</Condition> -->
+            <Condition>servicecallout.SC-UserAuthenticateClient.failed = true</Condition>
+            <Step>
+                <Name>RF-UserAuthenticateFailed</Name>
             </Step>
         </FaultRule>
     </FaultRules>
@@ -70,10 +77,6 @@
                     <Name>JS-AdjustExpiryValues</Name>
                 </Step>
                 <Step>
-                    <Condition>(request.formparam.username != "demouser") OR (request.formparam.password != "demouser1")</Condition>
-                    <Name>RF-AutenticateFailed</Name>
-                </Step>
-                <Step>
                     <Name>OA-GenerateAccessToken-Password</Name>
                 </Step>
             </Request>
@@ -92,7 +95,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "POST") and (request.formparam.grant_type = "implicit"</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "POST") and (request.formparam.grant_type = "implicit")</Condition>
         </Flow>
         <Flow name="Token - Refresh">
             <Description/>
@@ -130,7 +133,7 @@
             <Description>Catch any unmatched calls and raise fault</Description>
             <Request>
                 <Step>
-                    <Name>RF-path-suffix-not-found</Name>
+                    <Name>RF-NotFound</Name>
                 </Step>
             </Request>
             <Response/>
