@@ -35,6 +35,9 @@
                     <Name>EV-TokenParams</Name>
                 </Step>
                 <Step>
+                    <Name>JS-AdjustExpiryValues</Name>
+                </Step>
+                <Step>
                     <Name>OA-GenerateAccessToken-ClientCredentials</Name>
                 </Step>
             </Request>
@@ -129,6 +132,29 @@
             </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "refresh_token")</Condition>
         </Flow>
+        <Flow name="token">
+            <Description>Validate token and send response</Description>
+            <Request>
+                <Step>
+                    <Name>OA-ValidateToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-GenerateAccessToken-Password</Name>
+                </Step>
+                <Step>
+                    <Name>AM-TokenInfo</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/token")</Condition>
+        </Flow>
+        <Flow name="CORS">
+            <Description>Ignore options requests</Description>
+            <Request/>
+            <Response/>
+            <Condition>(request.verb = "OPTIONS") and (proxy.pathsuffix MatchesPath "**")</Condition>
+        </Flow>
         <Flow name="catch all">
             <Description>Catch any unmatched calls and raise fault</Description>
             <Request>
@@ -137,7 +163,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/**")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "**")</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">

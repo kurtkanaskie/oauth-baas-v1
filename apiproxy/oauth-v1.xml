@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="12" name="oauth-v1">
+<APIProxy revision="21" name="oauth-v1">
     <Basepaths>/oauth</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1556055603400</CreatedAt>
     <CreatedBy>kurtkanaskie+jenkins@google.com</CreatedBy>
     <Description>Works with oauth-v1-mock Revision 3 - OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
     <DisplayName>oauth-v1</DisplayName>
-    <LastModifiedAt>1559141957218</LastModifiedAt>
+    <LastModifiedAt>1583438737563</LastModifiedAt>
     <LastModifiedBy>defaultUser</LastModifiedBy>
-    <ManifestVersion>SHA-512:6aeba2688287813fae445a8f4f5f95d102a8a4286b9e6232d7b7f5f5f02edc9606a9158931cbbe6c7bf54481cb6491830568ff4cedf5ef70c9055f5614ba69ae</ManifestVersion>
+    <ManifestVersion>SHA-512:5028f896c66f87b0f403a73c5184dca3e3bf60c4e504dcca98677462fec9865afa47db477be603a43cdd9ceddfa35b2451cad0f56416ac6fb32cdf8b660bdfd3</ManifestVersion>
     <Policies>
         <Policy>AM-GenerateAccessToken-ClientCredentials</Policy>
         <Policy>AM-GenerateAccessToken-Password</Policy>
         <Policy>AM-RefreshAccessToken</Policy>
         <Policy>AM-SetUsernamePasswordFromRequest</Policy>
         <Policy>AM-SetUsernamePasswordFromToken</Policy>
+        <Policy>AM-TokenInfo</Policy>
         <Policy>EV-TokenParams</Policy>
         <Policy>JS-AdjustExpiryValues</Policy>
         <Policy>KV-config-values</Policy>
@@ -23,6 +24,7 @@
         <Policy>OA-GenerateAccessToken-Password</Policy>
         <Policy>OA-GetRefreshTokenInfo</Policy>
         <Policy>OA-RefreshAccessToken</Policy>
+        <Policy>OA-ValidateToken</Policy>
         <Policy>OA-VerifyAPIKey-and-Secret</Policy>
         <Policy>RF-AppAuthenticateFailed</Policy>
         <Policy>RF-NotFound</Policy>
