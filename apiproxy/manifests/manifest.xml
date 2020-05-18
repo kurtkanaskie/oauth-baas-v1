@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM-GenerateAccessToken-ClientCredentials" version="SHA-512:844b2c993421d3a5597ac3e6173e6f221ee3584b6668e7a0e316254380ec3b47bcbe9cb5dcff310c24c797e97bc161638ef93f080fa2d010fea0009bf87d0b76"/>
+        <VersionInfo resourceName="AM-GenerateAccessToken-Password" version="SHA-512:bd6bc554cacc9c01856fd39d2311697e394a3bab02296f220195edb267cf0e08549bf1a65bb190455a79b3a2a62d2162854316089fc57a961ca50c91eb64fe76"/>
+        <VersionInfo resourceName="AM-RefreshAccessToken" version="SHA-512:ba09d27c416324db06f6d13b4d5dc62883dd034e14756127dcecbc2f9b2fa6ef0ce38fd31bec8bec3ea79816c07a1324a4569e9ce7f117e6f9852b68fed2b22c"/>
+        <VersionInfo resourceName="AM-SetUsernamePasswordFromRequest" version="SHA-512:8e1f311847ca23fecc5bc2487424bc85b0292547b4d56702f8e7b034e9cbfa0679144b76d97c08f8e92bec7eee9dc5b3ce742456146e726bd73cefc8a7e4f28c"/>
+        <VersionInfo resourceName="AM-SetUsernamePasswordFromToken" version="SHA-512:b334342789bdc415e891c135345d8c8426838fcb5aeb2765240ab486cdfdc8a412ae9a5454835c985eedb275fdb3138da967ffc69921c2e597d154fca58a7262"/>
+        <VersionInfo resourceName="AM-TokenInfo" version="SHA-512:5c252994511752b81d4ef66e36d0d22697164865c96a901efc1ee8b1c7d9a6b233938cc25e98c77da77a93af2c6318ebab003ecd28cbc68f1e90e842de4ac26f"/>
+        <VersionInfo resourceName="EV-TokenParams" version="SHA-512:1176444fd0597d85764d9b70d28daa24a3bf288f637c90e73e7c52cb47db5846c06adbdb9139660c29a4852b2f08cb02d4ec56873df71ebaddebaac9b71541c6"/>
+        <VersionInfo resourceName="JS-AdjustExpiryValues" version="SHA-512:e4d6c46946059a21ac2d71b2e7b6eb5351e26b7029dcdadea17aa5aa21788419b8fa6c48de08fbbc96ac2f3d994f8402b8ff4a163e0b4b25ba9cceaea62ea1cf"/>
+        <VersionInfo resourceName="KV-config-values" version="SHA-512:7a7a2e086d1e129c76fb44f13b7a296c91f5a9bdd74430f941b3438291766eb46c46a8d5bfaae5d5b5785e5367220efb8ea1ad88fb2e4abe685c1cfa8ac6bb6d"/>
+        <VersionInfo resourceName="OA-GenerateAccessToken-ClientCredentials" version="SHA-512:b5db499e7067d8dcd8c92bc1723138843ed06b0762c28820b030291cf6a518cac297809a06adbba2537dab568a2e2d1a1f43575d6f936305eddc0fc4d6a545b8"/>
+        <VersionInfo resourceName="OA-GenerateAccessToken-Implicit" version="SHA-512:f72055ddf67eeb771bd452ef4954bbe990690bdabcd598fb56b21aa179f055a91d7552d1cebbaa2cf2893a6b830d556f9ff557f12cf933d6c4c2f70482014d06"/>
+        <VersionInfo resourceName="OA-GenerateAccessToken-Password" version="SHA-512:10fbed25cb5bc214bb523e9a73e2999912b9ffe7d52c1b8bd5f26182b1eda56e8670d2933dd5fd61fd3566d870596133877e1e90b4ca53ddc41fbadc16b098f9"/>
+        <VersionInfo resourceName="OA-GetRefreshTokenInfo" version="SHA-512:b1facc320bcb52c3ad5c6351e5621f37dea4dca7a2b80bec6a749f1763a82b48f5c78cb40ca70aa169da8c24017bf3419474fb7fae0cf22223d7cf6366d62302"/>
+        <VersionInfo resourceName="OA-RefreshAccessToken" version="SHA-512:55983fd9ebe7796f57a8727301a6d729e7ad4861e8e06e7c643d482a3e6e075e9c93754a525f0cd4e16b59e39d172590b3e3013407747a907de755bf31acfcb3"/>
+        <VersionInfo resourceName="OA-ValidateToken" version="SHA-512:5b3614c3fb7cce60d2ec81bc155d7494c7d62419167e2767d2872131368899274323fc7ae96bfd0088a9bcc081be387b608f9ca4d62330085d22de13dee110e6"/>
+        <VersionInfo resourceName="OA-VerifyAPIKey-and-Secret" version="SHA-512:2c759c395079ffc49031a9f8e5eb41fae8c76c80e03a335fb3a865e5a1285b70566819426ec0df75a0526395a685cc60bacae7b17372b7b17b0e1ea843855d6d"/>
+        <VersionInfo resourceName="RF-AppAuthenticateFailed" version="SHA-512:5b2df3ee60ab065e1185399bdc4034d78f14adfe78aa21259fdd742e2852f1f0c151ee497187fc20240fba01c61c28bd9c1bbd31152a8b49b907f2cc9e6c902b"/>
+        <VersionInfo resourceName="RF-NotFound" version="SHA-512:b9e72d0d25cec4415dde8a1a3b1c03d41e1113d1cfb6569af73ee6ff838069cefbc295f47ad0e5d8a89b3756415959cc9104e17c72a5595a5068c5cade40c2d5"/>
+        <VersionInfo resourceName="RF-UserAuthenticateFailed" version="SHA-512:9bdb5ea1af41d4ff5959c1f613a385d2fccbfa9eac0a71b7972adc6792254f5b559aa2b164363c3eceb41010d696dda3a4706c621f5e668d715e9370bca95b5a"/>
+        <VersionInfo resourceName="SC-AuthenticateClient" version="SHA-512:e7a9ca3ba434a6da33b012b74d22a35838e19c2591ab3ef0bcad50557f441393fb821937ab99b67aa2f3a36b244ca0da866cba1963ee211636004a5e89716310"/>
+        <VersionInfo resourceName="SC-AuthenticateUser" version="SHA-512:69b906456144d257538aeb50cc95df61e1a27bcd58c339751bd8a5913428ae90aee0a8b3ccaaef67f8d324179d64ef315ee1fd29ed479e31a985df9767545f6c"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:473e0d92c6d464bcf726f73132f01ab770705d3c69dafa326f78ea5fd587deb3dc1c13f89d4464875051c090e7fa8fb79c3a6211b91dd5b347963e632113cb96"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://JS-AdjustExpiryValues.js" version="SHA-512:095215f9d6cffcc7ab31d888b5b9699f54666434e70d0e4d37bc0bc171de915dbdcd797d304b8e03ea8e7116779be944b2ee41e8db8350bffdbef29c4f25633e"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

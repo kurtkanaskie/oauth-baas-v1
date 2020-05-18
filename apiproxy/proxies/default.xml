@@ -141,9 +141,6 @@
             </Request>
             <Response>
                 <Step>
-                    <Name>AM-GenerateAccessToken-Password</Name>
-                </Step>
-                <Step>
                     <Name>AM-TokenInfo</Name>
                 </Step>
             </Response>
