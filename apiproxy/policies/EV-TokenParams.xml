@@ -11,5 +11,5 @@
             <JSONPath>$.expires_in</JSONPath>
         </Variable>
     </JSONPayload>
-    <Source clearPayload="false">authenticate.response</Source>
+    <Source clearPayload="false">authenticate_response</Source>
 </ExtractVariables>

@@ -20,7 +20,7 @@
         </Set>
         <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
     </Request>
-    <Response>authenticate.response</Response>
+    <Response>authenticate_response</Response>
     <HTTPTargetConnection>
         <LoadBalancer>
             <Server name="oauth-v1"/>

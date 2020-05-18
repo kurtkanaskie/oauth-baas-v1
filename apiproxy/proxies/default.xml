@@ -172,8 +172,8 @@
     </PostFlow>
     <HTTPProxyConnection>
         <BasePath>/oauth/v1</BasePath>
-        <Properties/>
         <VirtualHost>secure</VirtualHost>
+        <VirtualHost>secure-one-way</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="NoRoute"/>
 </ProxyEndpoint>
