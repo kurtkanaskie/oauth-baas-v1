@@ -42,6 +42,7 @@
         </Key>
     </Get>
     -->
+    <!-- Don't do this unless KVM has values, otherwise message up GetLogValues
     <Get assignTo="logging.log" index="1">
         <Key>
             <Parameter>logging.log</Parameter>
@@ -52,5 +53,6 @@
             <Parameter>logging.level</Parameter>
         </Key>
     </Get>
+    -->
     <Scope>environment</Scope>
 </KeyValueMapOperations>
