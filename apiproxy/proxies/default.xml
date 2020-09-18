@@ -90,16 +90,6 @@
             </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
         </Flow>
-        <Flow name="Token - Implicit">
-            <Description/>
-            <Request>
-                <Step>
-                    <Name>OA-GenerateAccessToken-Implicit</Name>
-                </Step>
-            </Request>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "POST") and (request.formparam.grant_type = "implicit")</Condition>
-        </Flow>
         <Flow name="Token - Refresh">
             <Description/>
             <Request>

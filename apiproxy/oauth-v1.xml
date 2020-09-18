@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="22" name="oauth-v1">
+<APIProxy revision="32" name="oauth-v1">
     <Basepaths>/oauth</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1556055603400</CreatedAt>
-    <CreatedBy>kurtkanaskie+jenkins@google.com</CreatedBy>
+    <CreatedAt>1597335373695</CreatedAt>
+    <CreatedBy>kurtkanaskie+cicd@google.com</CreatedBy>
     <Description>Works with oauth-v1-mock Revision 3 - OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
     <DisplayName>oauth-v1</DisplayName>
-    <LastModifiedAt>1589827664969</LastModifiedAt>
-    <LastModifiedBy>defaultUser</LastModifiedBy>
-    <ManifestVersion>SHA-512:420b7ad3515f949113c1ae491d546b83332de44704166f4b722f7981555ae2b489bacb79cc12267dadb7d806071184e7070db732db8733759fdfcff3ebb1fc19</ManifestVersion>
+    <LastModifiedAt>1597335373695</LastModifiedAt>
+    <LastModifiedBy>kurtkanaskie+cicd@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:0025c69bbc28d82c6db18465e68593af9569350afa7235aa1c71cf0de5e6c926eab77eb138cc778ac23c24a69c27a33628424f69ac11e506ac97111e75b832ba</ManifestVersion>
     <Policies>
         <Policy>AM-GenerateAccessToken-ClientCredentials</Policy>
         <Policy>AM-GenerateAccessToken-Password</Policy>
@@ -20,7 +20,6 @@
         <Policy>JS-AdjustExpiryValues</Policy>
         <Policy>KV-config-values</Policy>
         <Policy>OA-GenerateAccessToken-ClientCredentials</Policy>
-        <Policy>OA-GenerateAccessToken-Implicit</Policy>
         <Policy>OA-GenerateAccessToken-Password</Policy>
         <Policy>OA-GetRefreshTokenInfo</Policy>
         <Policy>OA-RefreshAccessToken</Policy>
