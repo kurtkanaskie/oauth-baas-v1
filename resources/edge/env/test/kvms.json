@@ -24,5 +24,15 @@
                 "value": "NBvDbJyrFikSGXE0prDyky8Kokq0ovSz,B3fy6FrCHO4fbgRo"
             }
         ]
+    },
+    {
+        "name": "oauth-v1-jwt-key",
+        "encrypted": true,
+        "entry": [
+            {
+                "name": "key",
+                "value": "SuperSecretKey"
+            }
+        ]
     }
 ]

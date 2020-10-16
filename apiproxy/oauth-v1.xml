@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="32" name="oauth-v1">
+<APIProxy revision="36" name="oauth-v1">
     <Basepaths>/oauth</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1597335373695</CreatedAt>
-    <CreatedBy>kurtkanaskie+cicd@google.com</CreatedBy>
-    <Description>Works with oauth-v1-mock Revision 3 - OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
+    <CreatedAt>1556055603400</CreatedAt>
+    <CreatedBy>kurtkanaskie+jenkins@google.com</CreatedBy>
+    <Description>Added JWT Bearer Authorization - Works with oauth-v1-mock Revision 3 - OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
     <DisplayName>oauth-v1</DisplayName>
-    <LastModifiedAt>1597335373695</LastModifiedAt>
-    <LastModifiedBy>kurtkanaskie+cicd@google.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:0025c69bbc28d82c6db18465e68593af9569350afa7235aa1c71cf0de5e6c926eab77eb138cc778ac23c24a69c27a33628424f69ac11e506ac97111e75b832ba</ManifestVersion>
+    <LastModifiedAt>1600711601276</LastModifiedAt>
+    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <ManifestVersion>SHA-512:8abe515d4a35f3a38f4a4dc77c0634cb128b9b7a0430a2de103cffc7056475178b72d498a8c92caa161d31190cc8da21abed14a579d39c0de6ca3a5ba693754a</ManifestVersion>
     <Policies>
+        <Policy>AE-APIKey</Policy>
+        <Policy>AM-Debug</Policy>
+        <Policy>AM-FauxClientCredentialsRequest</Policy>
         <Policy>AM-GenerateAccessToken-ClientCredentials</Policy>
+        <Policy>AM-GenerateAccessToken-JWTBearer</Policy>
         <Policy>AM-GenerateAccessToken-Password</Policy>
+        <Policy>AM-JWTResponse</Policy>
         <Policy>AM-RefreshAccessToken</Policy>
+        <Policy>AM-SetAudience</Policy>
         <Policy>AM-SetUsernamePasswordFromRequest</Policy>
         <Policy>AM-SetUsernamePasswordFromToken</Policy>
         <Policy>AM-TokenInfo</Policy>
         <Policy>EV-TokenParams</Policy>
         <Policy>JS-AdjustExpiryValues</Policy>
+        <Policy>JS-SetJWTExpiration</Policy>
+        <Policy>JW-Create</Policy>
+        <Policy>JW-Decode</Policy>
+        <Policy>JW-VerifyAssertion</Policy>
+        <Policy>KV-JWTSecret</Policy>
         <Policy>KV-config-values</Policy>
         <Policy>OA-GenerateAccessToken-ClientCredentials</Policy>
+        <Policy>OA-GenerateAccessToken-JWTBearerAuthorization</Policy>
         <Policy>OA-GenerateAccessToken-Password</Policy>
         <Policy>OA-GetRefreshTokenInfo</Policy>
         <Policy>OA-RefreshAccessToken</Policy>
         <Policy>OA-ValidateToken</Policy>
         <Policy>OA-VerifyAPIKey-and-Secret</Policy>
         <Policy>RF-AppAuthenticateFailed</Policy>
+        <Policy>RF-InvalidGrantTypeJWTBearer</Policy>
+        <Policy>RF-JWTVerifyFailed</Policy>
         <Policy>RF-NotFound</Policy>
         <Policy>RF-UserAuthenticateFailed</Policy>
         <Policy>SC-AuthenticateClient</Policy>

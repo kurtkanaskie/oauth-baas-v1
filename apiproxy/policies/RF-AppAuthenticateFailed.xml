@@ -11,12 +11,8 @@
             -->
             <Payload contentType="application/json">
 {
-    "fault": {
-        "faultstring": "Invalid App credentials",
-        "detail": {
-            "errorcode": "invalid_app_credentials"
-        }
-    }
+    "error":"invalid_app_credentials",
+    "error_description":"Invalid App credentials"
 }
 </Payload>
             <StatusCode>401</StatusCode>

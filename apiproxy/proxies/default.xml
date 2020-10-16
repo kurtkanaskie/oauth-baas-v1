@@ -40,12 +40,11 @@
                 <Step>
                     <Name>OA-GenerateAccessToken-ClientCredentials</Name>
                 </Step>
-            </Request>
-            <Response>
                 <Step>
                     <Name>AM-GenerateAccessToken-ClientCredentials</Name>
                 </Step>
-            </Response>
+            </Request>
+            <Response/>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "client_credentials")</Condition>
         </Flow>
         <Flow name="Token - Password">
@@ -82,12 +81,11 @@
                 <Step>
                     <Name>OA-GenerateAccessToken-Password</Name>
                 </Step>
-            </Request>
-            <Response>
                 <Step>
                     <Name>AM-GenerateAccessToken-Password</Name>
                 </Step>
-            </Response>
+            </Request>
+            <Response/>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
         </Flow>
         <Flow name="Token - Refresh">
@@ -114,12 +112,11 @@
                 <Step>
                     <Name>OA-RefreshAccessToken</Name>
                 </Step>
-            </Request>
-            <Response>
                 <Step>
                     <Name>AM-RefreshAccessToken</Name>
                 </Step>
-            </Response>
+            </Request>
+            <Response/>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "refresh_token")</Condition>
         </Flow>
         <Flow name="token">
@@ -135,6 +132,70 @@
                 </Step>
             </Response>
             <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/token")</Condition>
+        </Flow>
+        <Flow name="jwt">
+            <Description>Create JWT for use with assertion in JWT Bearer flow</Description>
+            <Request>
+                <Step>
+                    <Name>KV-JWTSecret</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SetAudience</Name>
+                </Step>
+                <Step>
+                    <Name>AM-Debug</Name>
+                </Step>
+                <Step>
+                    <Name>JW-Create</Name>
+                </Step>
+                <Step>
+                    <Name>AM-JWTResponse</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/jwt")</Condition>
+        </Flow>
+        <Flow name="Token - JWT-Bearer Authorization">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>KV-JWTSecret</Name>
+                </Step>
+                <Step>
+                    <Condition>request.formparam.grant_type != "urn:ietf:params:oauth:grant-type:jwt-bearer"</Condition>
+                    <Name>RF-InvalidGrantTypeJWTBearer</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SetAudience</Name>
+                </Step>
+                <Step>
+                    <Name>JW-Decode</Name>
+                </Step>
+                <Step>
+                    <Name>JW-VerifyAssertion</Name>
+                </Step>
+                <Step>
+                    <Condition>JWT.failed == true</Condition>
+                    <Name>RF-JWTVerifyFailed</Name>
+                </Step>
+                <Step>
+                    <Name>AE-APIKey</Name>
+                </Step>
+                <Step>
+                    <Name>JS-SetJWTExpiration</Name>
+                </Step>
+                <Step>
+                    <Name>AM-FauxClientCredentialsRequest</Name>
+                </Step>
+                <Step>
+                    <Name>OA-GenerateAccessToken-JWTBearerAuthorization</Name>
+                </Step>
+                <Step>
+                    <Name>AM-GenerateAccessToken-JWTBearer</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer")</Condition>
         </Flow>
         <Flow name="CORS">
             <Description>Ignore options requests</Description>
