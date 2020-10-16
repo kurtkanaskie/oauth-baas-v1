@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest name="manifest">
     <Policies>
-        <VersionInfo resourceName="AE-APIKey" version="SHA-512:3b8a3f8a8be2ebab30428392efcedec40cde5f71301fe06e0de97974002dd41850c0567c676a5d1189e283f32c7966c9f1b7572352a7f6addbbb31d5f46880b6"/>
+        <VersionInfo resourceName="AE-APIKey" version="SHA-512:c736bd277b5c20ecdd10c775a794c9fabc19c9cc41a8700a374e2328565cd7db9048efe18cc5a303a0ece728e5999fa23da8ef3111887fffd31e96157f57d8a4"/>
         <VersionInfo resourceName="AM-Debug" version="SHA-512:12a18a99f4ef3a530291716435d4d0c512700d6642afc0a2f7e6bcfddbb5d83e7312598c92ab166307fdd3646290fa663ca155bad96909f107a07c6b9451c040"/>
-        <VersionInfo resourceName="AM-FauxClientCredentialsRequest" version="SHA-512:af5ea0448c166ef3758f12bbdeeb4a9dd072f00229333b27bcbaad590c7de140e571236a390e61d443f1e9a76d566e5a691e35b3baf7c6f50219b5c69eb25aaf"/>
+        <VersionInfo resourceName="AM-FauxClientCredentialsRequest" version="SHA-512:e19fa4f54f1d746dc320d5b5ed19c092cfaa36e7a0f1e176637b88d0529158a0805184b6bcf8c95dea852e2b41a3071c19a7ea95b70efa2201af6ee6090d8dac"/>
         <VersionInfo resourceName="AM-GenerateAccessToken-ClientCredentials" version="SHA-512:23877127631dd797d1f9b87f0dc9ee6a3a5718869013dbc0b2941f4bd23e6e2eeccf2f3b798e8cc8fa8f26f222fe294ad7983d3e4fdd9a216d6774463824e17c"/>
         <VersionInfo resourceName="AM-GenerateAccessToken-JWTBearer" version="SHA-512:6f8fdb41c953e88c7f7bfb162f20464e08660d2c17fec090c7d1a50cd43661b19da0ca38b5d01d64619224de76fecbc35f6eb5183b1f5d3a0e4d690fd7d7a51e"/>
         <VersionInfo resourceName="AM-GenerateAccessToken-Password" version="SHA-512:bd6bc554cacc9c01856fd39d2311697e394a3bab02296f220195edb267cf0e08549bf1a65bb190455a79b3a2a62d2162854316089fc57a961ca50c91eb64fe76"/>
@@ -19,7 +19,7 @@
         <VersionInfo resourceName="JW-Create" version="SHA-512:cebc72e0dee1f322e97370b84142091ac3e979c0088ab9628d078b1e2a148474401bb30db5b8dc4f65889d2e57401214fd24347e1d817af35be1068940326c55"/>
         <VersionInfo resourceName="JW-Decode" version="SHA-512:3fbb968e745f4ba795abfc57424f870f254c5b1d0a1875ff79893c146cb9b491ec108991b3bc3768047ac78b100f830595517a611d573faccab3ec000c3cd575"/>
         <VersionInfo resourceName="JW-VerifyAssertion" version="SHA-512:bb6f886dd870779089067d22ebda0a6f112f8635a2387dcc5b3f57e54f819f7914d157901e0414b8bdfc3b58c2946914d9ef317224315d523b6018120764fed4"/>
-        <VersionInfo resourceName="KV-JWTSecret" version="SHA-512:5757929d78d30c536a7282d3ef276c1996e1b2e9579d1ae733bfc778bd742bc062b241597fb6d0f7c71f96fb20f43e97cbc30fc1e6aabfe139d65c48bc0e9cf4"/>
+        <VersionInfo resourceName="KV-JWTSecret" version="SHA-512:c6b9644138066eb017df616e9c080a99a93caeed38dd5a974ed6b04458e89b75b89fdf20c46ac75e71ee0810214c291c070a09975f2d685bcdb3687305e6e543"/>
         <VersionInfo resourceName="KV-config-values" version="SHA-512:4b85796c82b546d8119f6d4fab85cdfe031c3da357507db0d5a2694805de8dd8cc95cf28073ecf5a0f55a3d978610286a9f231b23bd0c21312f3e440b7b17de0"/>
         <VersionInfo resourceName="OA-GenerateAccessToken-ClientCredentials" version="SHA-512:b5db499e7067d8dcd8c92bc1723138843ed06b0762c28820b030291cf6a518cac297809a06adbba2537dab568a2e2d1a1f43575d6f936305eddc0fc4d6a545b8"/>
         <VersionInfo resourceName="OA-GenerateAccessToken-JWTBearerAuthorization" version="SHA-512:6e85989e341b7307b6e7810aba564ee9e2adef573210e12b8bb8f1ab0471c9215ec51b27dcddb303e424bf44573f2a51e4b27ac441a18acc0deabf0e98ebc108"/>
