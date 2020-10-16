@@ -6,5 +6,5 @@
     <ExpiresIn>3600000</ExpiresIn>
     <RefreshTokenExpiresIn>36000000</RefreshTokenExpiresIn>
     <GrantType>request.formparam.grant_type</GrantType>
-    <GenerateResponse enabled="false"/>
+    <GenerateResponse enabled="true"/>
 </OAuthV2>

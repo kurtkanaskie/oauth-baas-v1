@@ -11,6 +11,7 @@
     <SupportedGrantTypes>
         <GrantType>client_credentials</GrantType>
     </SupportedGrantTypes>
-    <GrantType>request.formparam.grant_type</GrantType>
-    <GenerateResponse enabled="false"/>
+    <GrantType>request.formparam.faux_grant_type</GrantType>
+    <GenerateResponse enabled="true"/>
+    <GenerateErrorResponse enabled="false"/>
 </OAuthV2>

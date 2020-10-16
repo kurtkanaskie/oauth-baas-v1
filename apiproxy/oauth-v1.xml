@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="37" name="oauth-v1">
+<APIProxy revision="39" name="oauth-v1">
     <Basepaths>/oauth</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1556055603400</CreatedAt>
     <CreatedBy>kurtkanaskie+jenkins@google.com</CreatedBy>
-    <Description>Added JWT Bearer Authorization - Works with oauth-v1-mock Revision 3 - OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
+    <Description>WIP make compliant - Added JWT Bearer Authorization - Works with oauth-v1-mock Revision 3 - OAuth proxy to generate access token for client_credentials and password grant_types using Mock to authenticate a demo user. Uses Mock tokens as attribute on Edge token.</Description>
     <DisplayName>oauth-v1</DisplayName>
-    <LastModifiedAt>1602877200222</LastModifiedAt>
+    <LastModifiedAt>1602881128700</LastModifiedAt>
     <LastModifiedBy>defaultUser</LastModifiedBy>
-    <ManifestVersion>SHA-512:bfaf2b4303370450d32e6dd9f2097725ba991cb2b2701c743d0d6d9b36345a4180b0f6973b8940c186a17b138f3a8765438a818f4009e5a295c038c22d3403b0</ManifestVersion>
+    <ManifestVersion>SHA-512:1e9f73f92d9483b4312ad05ef30815e6a0c4016f7a5eeb7255b60dbd5559c82bc715fcb6ac5795388e0b05439c62232cb8797f78128f12de0fbc7dc8995636db</ManifestVersion>
     <Policies>
         <Policy>AE-APIKey</Policy>
+        <Policy>AM-ContentTypeJSON</Policy>
         <Policy>AM-Debug</Policy>
         <Policy>AM-FauxClientCredentialsRequest</Policy>
         <Policy>AM-GenerateAccessToken-ClientCredentials</Policy>
@@ -22,6 +23,7 @@
         <Policy>AM-SetUsernamePasswordFromRequest</Policy>
         <Policy>AM-SetUsernamePasswordFromToken</Policy>
         <Policy>AM-TokenInfo</Policy>
+        <Policy>EV-OauthError</Policy>
         <Policy>EV-TokenParams</Policy>
         <Policy>JS-AdjustExpiryValues</Policy>
         <Policy>JS-SetJWTExpiration</Policy>
@@ -41,6 +43,7 @@
         <Policy>RF-InvalidGrantTypeJWTBearer</Policy>
         <Policy>RF-JWTVerifyFailed</Policy>
         <Policy>RF-NotFound</Policy>
+        <Policy>RF-OauthError</Policy>
         <Policy>RF-UserAuthenticateFailed</Policy>
         <Policy>SC-AuthenticateClient</Policy>
         <Policy>SC-AuthenticateUser</Policy>

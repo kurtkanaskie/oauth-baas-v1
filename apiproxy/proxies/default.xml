@@ -40,11 +40,25 @@
                 <Step>
                     <Name>OA-GenerateAccessToken-ClientCredentials</Name>
                 </Step>
+            </Request>
+            <Response>
                 <Step>
+                    <Condition>oauthV2.failed == false</Condition>
                     <Name>AM-GenerateAccessToken-ClientCredentials</Name>
                 </Step>
-            </Request>
-            <Response/>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>AM-ContentTypeJSON</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>EV-OauthError</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>RF-OauthError</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "client_credentials")</Condition>
         </Flow>
         <Flow name="Token - Password">
@@ -62,15 +76,6 @@
                 <Step>
                     <Name>SC-AuthenticateUser</Name>
                 </Step>
-                <!--
-                    <Condition>servicecallout.SC-AuthenticateUser.failed = true</Condition>
-                -->
-                <!-- 
-                <Step>
-                    <Condition>authenticate.response.status.code != 200</Condition>
-                    <Name>RF-AutenticateFailed</Name>
-                </Step>
-                -->
                 <Step>
                     <!-- PO003 issue -->
                     <Name>EV-TokenParams</Name>
@@ -81,11 +86,25 @@
                 <Step>
                     <Name>OA-GenerateAccessToken-Password</Name>
                 </Step>
+            </Request>
+            <Response>
                 <Step>
+                    <Condition>oauthV2.failed == false</Condition>
                     <Name>AM-GenerateAccessToken-Password</Name>
                 </Step>
-            </Request>
-            <Response/>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>AM-ContentTypeJSON</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>EV-OauthError</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>RF-OauthError</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "password")</Condition>
         </Flow>
         <Flow name="Token - Refresh">
@@ -112,48 +131,26 @@
                 <Step>
                     <Name>OA-RefreshAccessToken</Name>
                 </Step>
-                <Step>
-                    <Name>AM-RefreshAccessToken</Name>
-                </Step>
-            </Request>
-            <Response/>
-            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "refresh_token")</Condition>
-        </Flow>
-        <Flow name="token">
-            <Description>Validate token and send response</Description>
-            <Request>
-                <Step>
-                    <Name>OA-ValidateToken</Name>
-                </Step>
             </Request>
             <Response>
                 <Step>
-                    <Name>AM-TokenInfo</Name>
+                    <Condition>oauthV2.failed == false</Condition>
+                    <Name>AM-RefreshAccessToken</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>AM-ContentTypeJSON</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>EV-OauthError</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>RF-OauthError</Name>
                 </Step>
             </Response>
-            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/token")</Condition>
-        </Flow>
-        <Flow name="jwt">
-            <Description>Create JWT for use with assertion in JWT Bearer flow</Description>
-            <Request>
-                <Step>
-                    <Name>KV-JWTSecret</Name>
-                </Step>
-                <Step>
-                    <Name>AM-SetAudience</Name>
-                </Step>
-                <Step>
-                    <Name>AM-Debug</Name>
-                </Step>
-                <Step>
-                    <Name>JW-Create</Name>
-                </Step>
-                <Step>
-                    <Name>AM-JWTResponse</Name>
-                </Step>
-            </Request>
-            <Response/>
-            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/jwt")</Condition>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "refresh_token")</Condition>
         </Flow>
         <Flow name="Token - JWT-Bearer Authorization">
             <Description/>
@@ -190,12 +187,61 @@
                 <Step>
                     <Name>OA-GenerateAccessToken-JWTBearerAuthorization</Name>
                 </Step>
+            </Request>
+            <Response>
                 <Step>
+                    <Condition>oauthV2.failed == false</Condition>
                     <Name>AM-GenerateAccessToken-JWTBearer</Name>
                 </Step>
-            </Request>
-            <Response/>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>AM-ContentTypeJSON</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>EV-OauthError</Name>
+                </Step>
+                <Step>
+                    <Condition>oauthV2.failed == true</Condition>
+                    <Name>RF-OauthError</Name>
+                </Step>
+            </Response>
             <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/token") and (request.formparam.grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer")</Condition>
+        </Flow>
+        <Flow name="token">
+            <Description>Validate token and send response</Description>
+            <Request>
+                <Step>
+                    <Name>OA-ValidateToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-TokenInfo</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET") and (proxy.pathsuffix MatchesPath "/token")</Condition>
+        </Flow>
+        <Flow name="jwt">
+            <Description>Create JWT for use with assertion in JWT Bearer flow</Description>
+            <Request>
+                <Step>
+                    <Name>KV-JWTSecret</Name>
+                </Step>
+                <Step>
+                    <Name>AM-SetAudience</Name>
+                </Step>
+                <Step>
+                    <Name>AM-Debug</Name>
+                </Step>
+                <Step>
+                    <Name>JW-Create</Name>
+                </Step>
+                <Step>
+                    <Name>AM-JWTResponse</Name>
+                </Step>
+            </Request>
+            <Condition>(request.verb = "POST") and (proxy.pathsuffix MatchesPath "/jwt")</Condition>
         </Flow>
         <Flow name="CORS">
             <Description>Ignore options requests</Description>
